@@ -1,0 +1,74 @@
+:host {
+  display: block;
+}
+
+.clock {
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border-radius: 50%;
+  border: 4px solid #456b90;
+  box-shadow: rgba(0, 58, 92, 0.25) 0px 25px 50px -12px;
+  
+  position: relative;
+  margin: 1rem auto;
+}
+
+/* clock style ends */
+
+/* round center */
+
+.clock::before {
+  content: '';
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #e46405;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
+
+/* round center style ends */
+
+/* common style for every hand */
+
+.hand {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translateX(-50%) rotate(90deg);
+  transform-origin: bottom;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+
+/* common style ends */
+
+/* hour hand */
+
+.hour {
+  width: 4px;
+  height: 28%;
+  background-color: #003a5c;
+}
+
+/* hour hand style ends */
+/* minute hand style */
+
+.minute {
+  width: 4px;
+  height: 38%;
+  background-color: #003a5c;
+}
+
+/* minute hand style ends */
+/* second hand style */
+
+.second {
+  width: 2px;
+  height: 40%;
+  background-color: #e46405;
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Stencil Date Time Component</title>
+    <style>
+      html{
+        height: 100%;
+      }
+      body{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+    <script type="module" src="/build/stencil-date-time-component.esm.js"></script>
+    <script nomodule src="/build/stencil-date-time-component.js"></script>
+  </head>
+  <body>
+    <date-time time-zone="Asia/Calcutta" should-update="true" show-clock="true"></date-time>
+  </body>
+</html>
