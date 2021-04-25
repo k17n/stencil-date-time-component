@@ -54,9 +54,9 @@ export class analogClock {
         const clockHandStyles = this.getClockHandStyles(this.time, this.timeZone);
         return (
             <div class="clock">
-                <div class="hand hour" style={{ transform: `translateX(-50%) ${clockHandStyles.hourHand}` }}></div>
-                <div class="hand minute" style={{ transform: `translateX(-50%) ${clockHandStyles.minuteHand}` }}></div>
-                <div class="hand second" style={{ transform: `translateX(-50%) ${clockHandStyles.secondHand}` }}></div>
+                <div class="clock__hand clock__hand--hour" style={{ transform: `translateX(-50%) ${clockHandStyles.hourHand}` }}></div>
+                <div class="clock__hand clock__hand--minute" style={{ transform: `translateX(-50%) ${clockHandStyles.minuteHand}` }}></div>
+                <div class="clock__hand clock__hand--second" style={{ transform: `translateX(-50%) ${clockHandStyles.secondHand}` }}></div>
             </div>
         );
     }
