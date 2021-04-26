@@ -52,24 +52,15 @@ export class dateTime {
     render() {
         const dateTimeJson = this.getDateTimeJSON(this.time);
         const showClock = this.showClock;
-        if (showClock) {
-            return (
-                <div class="date-time">
+        return (
+            <div class="date-time">
+                {showClock &&
                     <analog-clock time={this.time} timeZone={this.timeZone}></analog-clock>
-                    <div><b>Date:</b> <time>{dateTimeJson.date}</time></div>
-                    <div><b>Time:</b> <time>{dateTimeJson.time}</time></div>
-                    <div><b>Time Zone:</b> {dateTimeJson.timeZone}</div>
-                </div>
-            );
-        }
-        else {
-            return (
-                <div class="date-time">
-                    <div><b>Date:</b> <time>{dateTimeJson.date}</time></div>
-                    <div><b>Time:</b> <time>{dateTimeJson.time}</time></div>
-                    <div><b>Time Zone:</b> {dateTimeJson.timeZone}</div>
-                </div>
-            );
-        }
+                }
+                <div><b>Date:</b> <time>{dateTimeJson.date}</time></div>
+                <div><b>Time:</b> <time>{dateTimeJson.time}</time></div>
+                <div><b>Time Zone:</b> {dateTimeJson.timeZone}</div>
+            </div>
+        );
     }
 }
