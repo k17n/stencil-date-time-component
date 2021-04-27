@@ -18,17 +18,15 @@ export class analogClock {
     private locale: string = Intl.DateTimeFormat().resolvedOptions().locale;
 
     private getClockHandStyles(time: number, timeZone: string): any {
-
+        
         // Get current locale time based on given timezone
-        const currentLocaleString = new Date(time).toLocaleString(this.locale, { timeZone: timeZone });
-
-        // Get date string based on generated locale time 
-        const DateString = new Date(currentLocaleString);
+        const currentLocaleTimeString = new Date(time).toLocaleTimeString(this.locale, { timeZone: timeZone });
 
         // Get the hours, minutes and seconds from the date string
-        const hours = DateString.getHours();
-        const minutes = DateString.getMinutes();
-        const seconds = DateString.getSeconds();
+        const hours = parseInt(currentLocaleTimeString.substring(0,2));
+        const minutes = parseInt(currentLocaleTimeString.substring(3,5));
+        const seconds = parseInt(currentLocaleTimeString.substring(6,8));
+        console.log(`hours Minutes Seconds: ${hours},${minutes},${seconds}`);
 
         // Calculating the rotating fraction --> how many fraction to rotate for each hand.
         const secondsFraction = seconds / 60;
