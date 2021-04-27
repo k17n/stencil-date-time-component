@@ -14,15 +14,17 @@
     "dist/",
     "loader/"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/k17n/stencil-date-time-component.git"
+  },
   "scripts": {
     "build": "stencil build --docs",
     "start": "stencil build --dev --watch --serve"
   },
   "dependencies": {
-    "@stencil/core": "^2.0.1"
-  },
-  "license": "MIT",
-  "devDependencies": {
+    "@stencil/core": "^2.0.1",
     "@stencil/sass": "^1.4.1"
-  }
+  },
+  "license": "MIT"
 }
