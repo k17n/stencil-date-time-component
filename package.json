@@ -1,6 +1,6 @@
 {
   "name": "stencil-date-time-component",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Simple web component to display Date, Time and Time Zone built with Stencil.",
   "main": "dist/index.cjs.js",
   "module": "dist/custom-elements/index.js",
@@ -14,10 +14,19 @@
     "dist/",
     "loader/"
   ],
+  "keywords": [
+    "Date Time",
+    "Webcomponent",
+    "Stencil",
+    "StencilJS",
+    "Stencil Component"
+  ],
+  "author": "Karthik Venkataraman (https://github.com/k17n)",
   "repository": {
     "type": "git",
     "url": "https://github.com/k17n/stencil-date-time-component.git"
   },
+  "homepage": "https://github.com/k17n/stencil-date-time-component#readme",
   "scripts": {
     "build": "stencil build --docs",
     "start": "stencil build --dev --watch --serve"
