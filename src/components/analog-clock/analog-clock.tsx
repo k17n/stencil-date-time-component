@@ -22,13 +22,13 @@ export class analogClock {
         // Get current locale time based on given timezone
         const currentLocaleTimeString = new Date(time).toLocaleTimeString(this.locale, { timeZone: timeZone });
 
-        // Format the locale time string by splitting and padding different time units. Value is returned as JSON.
-        const formattedLocaleTime = this.formatTime(currentLocaleTimeString);
+        // Split the locale time string into different time units. Value is returned as JSON.
+        const splitTimeJSON = this.splitTimeString(currentLocaleTimeString);
 
-        // Convert the hours, minutes and seconds into numbers from string in formattedLocaleTime JSON
-        const hours = parseInt(formattedLocaleTime.hours);
-        const minutes = parseInt(formattedLocaleTime.minutes);
-        const seconds = parseInt(formattedLocaleTime.seconds);
+        // Convert the hours, minutes and seconds into numbers from string in splitTimeJSON JSON
+        const hours = parseInt(splitTimeJSON.hours);
+        const minutes = parseInt(splitTimeJSON.minutes);
+        const seconds = parseInt(splitTimeJSON.seconds);
 
         // Calculating the rotating fraction --> how many fraction to rotate for each hand.
         const secondsFraction = seconds / 60;
@@ -50,7 +50,7 @@ export class analogClock {
         return clockHandStyles;
     }
 
-    private formatTime(timeString: string) {
+    private splitTimeString(timeString: string) {
         // Occurence of first ':' in the time string
         const firstSplitIndex = timeString.indexOf(':')
 
@@ -59,25 +59,16 @@ export class analogClock {
 
         // Occurence of space ' ' in the time string. It will be used to delimit the string and omit the AM/PM part
         const delimitIndex = timeString.indexOf(' ');
-        
-        let formattedTime = {
+
+        let splitTimeJSON = {
             hours: '',
             minutes: '',
             seconds: ''
         }
-        formattedTime.hours = this.padTimeString(timeString.substring(0, firstSplitIndex));
-        formattedTime.minutes = this.padTimeString(timeString.substring(firstSplitIndex + 1, secondSplitIndex));
-        formattedTime.seconds = this.padTimeString(timeString.substring(secondSplitIndex + 1, delimitIndex));
-        return formattedTime;
-    }
-
-    private padTimeString(timeString: string) {
-        if (timeString.length == 1) {
-            return `0${timeString}`
-        }
-        else {
-            return timeString
-        }
+        splitTimeJSON.hours = timeString.substring(0, firstSplitIndex);
+        splitTimeJSON.minutes = timeString.substring(firstSplitIndex + 1, secondSplitIndex);
+        splitTimeJSON.seconds = timeString.substring(secondSplitIndex + 1, delimitIndex);
+        return splitTimeJSON;
     }
 
     render() {
