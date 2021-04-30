@@ -27,13 +27,17 @@
     "url": "https://github.com/k17n/stencil-date-time-component.git"
   },
   "homepage": "https://github.com/k17n/stencil-date-time-component#readme",
+  "license": "MIT",
   "scripts": {
-    "build": "stencil build --docs",
-    "start": "stencil build --dev --watch --serve"
+    "build": "npm run clean && stencil build --docs",
+    "start": "stencil build --dev --watch --serve",
+    "clean": "rimraf dist/ www/ loader/"
   },
   "dependencies": {
     "@stencil/core": "^2.0.1",
     "@stencil/sass": "^1.4.1"
   },
-  "license": "MIT"
+  "devDependencies": {
+    "rimraf": "^3.0.2"
+  }
 }
